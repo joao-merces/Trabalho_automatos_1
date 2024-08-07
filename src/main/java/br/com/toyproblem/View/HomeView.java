@@ -1,12 +1,10 @@
-package br.com.toyproblem.View;
+ package br.com.toyproblem.View;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import javax.sound.sampled.Line;
 
 public class HomeView extends Application {
     @Override
@@ -20,7 +18,5 @@ public class HomeView extends Application {
         stage.setScene(scene);
         stage.setTitle("Toy Problem 2");
         stage.show();
-
-
     }
 }

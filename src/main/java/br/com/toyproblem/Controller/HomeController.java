@@ -1,19 +1,31 @@
 package br.com.toyproblem.Controller;
 
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.TextField;
 
 public class HomeController implements Initializable {
+
     @FXML
     private Line line_k;
 
     @FXML
     private Line line_l;
+
+    @FXML
+    private TextField txtFieldBaldes;
 
     @FXML
     private Line flecha_ab;
@@ -71,6 +83,112 @@ public class HomeController implements Initializable {
 
     @FXML
     private Line line_d;
+
+    @FXML
+    private Circle circle;
+
+    @FXML
+    void btn_start_clicked(ActionEvent event) {
+        // ESTADO H
+        TranslateTransition transition1 = new TranslateTransition();
+        transition1.setDuration(Duration.seconds(0.5));
+        transition1.setNode(circle);
+        transition1.setToX(0);
+        transition1.setToY(-130);
+
+        TranslateTransition transition2 = new TranslateTransition();
+        transition2.setDuration(Duration.seconds(0.5));
+        transition2.setNode(circle);
+        transition2.setToX(440);
+        transition2.setToY(-130);
+
+        TranslateTransition transition3 = new TranslateTransition();
+        transition3.setDuration(Duration.seconds(0.5));
+        transition3.setNode(circle);
+        transition3.setToX(460);
+        transition3.setToY(0);
+
+        // ESTADO E
+        TranslateTransition transition4 = new TranslateTransition();
+        transition4.setDuration(Duration.seconds(0.5));
+        transition4.setNode(circle);
+        transition4.setToX(480);
+        transition4.setToY(-130);
+
+        TranslateTransition transition5 = new TranslateTransition();
+        transition5.setDuration(Duration.seconds(0.5));
+        transition5.setNode(circle);
+        transition5.setToX(940);
+        transition5.setToY(-130);
+
+        PauseTransition p1 = new PauseTransition(Duration.seconds(2));
+
+        // ESTADO I
+        TranslateTransition transition6 = new TranslateTransition();
+        transition6.setDuration(Duration.seconds(0.5));
+        transition6.setNode(circle);
+        transition6.setToX(940);
+        transition6.setToY(0);
+        transition6.setOnFinished(e -> {
+            circle.setFill(Color.GRAY);
+        });
+
+        TranslateTransition transition7 = new TranslateTransition();
+        transition7.setDuration(Duration.seconds(0.5));
+        transition7.setNode(circle);
+        transition7.setToX(940);
+        transition7.setToY(130);
+
+        TranslateTransition transition8 = new TranslateTransition();
+        transition8.setDuration(Duration.seconds(0.5));
+        transition8.setNode(circle);
+        transition8.setToX(480);
+        transition8.setToY(130);
+
+        TranslateTransition transition9 = new TranslateTransition();
+        transition9.setDuration(Duration.seconds(0.5));
+        transition9.setNode(circle);
+        transition9.setToX(460);
+        transition9.setToY(0);
+
+        TranslateTransition transition10 = new TranslateTransition();
+        transition10.setDuration(Duration.seconds(0.5));
+        transition10.setNode(circle);
+        transition10.setToX(440);
+        transition10.setToY(130);
+
+        TranslateTransition transition11 = new TranslateTransition();
+        transition11.setDuration(Duration.seconds(0.5));
+        transition11.setNode(circle);
+        transition11.setToX(0);
+        transition11.setToY(130);
+
+        TranslateTransition transition12 = new TranslateTransition();
+        transition12.setDuration(Duration.seconds(0.5));
+        transition12.setNode(circle);
+        transition12.setToX(0);
+        transition12.setToY(0);
+        transition12.setOnFinished(e -> {
+            circle.setFill(Color.DARKBLUE);
+        });
+
+        PauseTransition p2 = new PauseTransition(Duration.seconds(2));
+
+        SequentialTransition sequentialTransition = new SequentialTransition(
+                transition1, transition2, transition3, transition4, transition5,
+                transition6, p1, transition7, transition8, transition9, transition10, transition11, transition12, p2);
+
+        SequentialTransition fullTransition = new SequentialTransition();
+        for (int i = 0; i < Integer.parseInt(txtFieldBaldes.getText()); i++) {
+            SequentialTransition newSequentialTransition = new SequentialTransition(
+                    transition1, transition2, transition3, transition4, transition5,
+                    transition6, p1, transition7, transition8, transition9, transition10, transition11, transition12, p2);
+            fullTransition.getChildren().add(newSequentialTransition);
+        }
+        fullTransition.play();
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -173,6 +291,5 @@ public class HomeController implements Initializable {
         flecha_db.setEndX(-36);
         flecha_db.setStartY(168);
         flecha_db.setEndY(198);
-
     }
 }

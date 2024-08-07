@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
@@ -40,7 +41,10 @@
             <Line fx:id="line_j" endX="100.0" layoutX="537.0" layoutY="579.0" startX="-100.0" />
             <Line fx:id="line_k" endX="100.0" layoutX="478.0" layoutY="525.0" startX="-100.0" />
             <Line fx:id="line_l" endX="100.0" layoutX="153.0" layoutY="524.0" startX="-100.0" />
-            <Button fx:id="btn_start" layoutX="586.0" layoutY="51.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Começar" />
+            <Button fx:id="btn_start" layoutX="586.0" layoutY="96.0" mnemonicParsing="false" onAction="#btn_start_clicked" prefHeight="35.0" prefWidth="109.0" text="Começar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <Line fx:id="flecha_aa" endX="100.0" layoutX="176.0" layoutY="231.0" startX="-100.0" />
             <Line fx:id="flecha_ab" endX="100.0" layoutX="186.0" layoutY="241.0" startX="-100.0" />
             <Line fx:id="flecha_ba" endX="100.0" layoutX="196.0" layoutY="251.0" startX="-100.0" />
@@ -49,6 +53,38 @@
             <Line fx:id="flecha_cb" endX="100.0" layoutX="206.0" layoutY="261.0" startX="-100.0" />
             <Line fx:id="flecha_da" endX="100.0" layoutX="216.0" layoutY="271.0" startX="-100.0" />
             <Line fx:id="flecha_db" endX="100.0" layoutX="206.0" layoutY="261.0" startX="-100.0" />
+            <Label layoutX="1216.0" layoutY="334.0" text="*">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="370.0" layoutY="184.0" text="A">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="893.0" layoutY="184.0" text="A">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="894.0" layoutY="516.0" text="B">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="371.0" layoutY="507.0" text="B">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Circle fx:id="circle" fill="#1c3c5b" layoutX="185.0" layoutY="360.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+            <TextField fx:id="txtFieldBaldes" layoutX="565.0" layoutY="57.0" />
+            <Label layoutX="416.0" layoutY="20.0" text="Numero de baldes para apagar o incêndio">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
