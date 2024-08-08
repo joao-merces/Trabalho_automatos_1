@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
@@ -9,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.toyproblem.Controller.HomeController">
    <children>
-      <Pane layoutY="7.0" prefHeight="720.0" prefWidth="1280.0">
+      <Pane fx:id="line_q" layoutY="7.0" prefHeight="720.0" prefWidth="1280.0">
          <children>
             <Circle fill="DODGERBLUE" layoutX="185.0" layoutY="360.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fill="DODGERBLUE" layoutX="640.0" layoutY="360.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
@@ -53,7 +54,7 @@
             <Line fx:id="flecha_cb" endX="100.0" layoutX="206.0" layoutY="261.0" startX="-100.0" />
             <Line fx:id="flecha_da" endX="100.0" layoutX="216.0" layoutY="271.0" startX="-100.0" />
             <Line fx:id="flecha_db" endX="100.0" layoutX="206.0" layoutY="261.0" startX="-100.0" />
-            <Label layoutX="1216.0" layoutY="334.0" text="*">
+            <Label layoutX="1140.0" layoutY="334.0" text="*">
                <font>
                   <Font size="36.0" />
                </font>
@@ -85,7 +86,32 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <Line fx:id="line_m" endX="42.0" layoutX="84.0" layoutY="403.0" startX="-45.0" />
+            <Line fx:id="line_n" endX="-40.0" endY="-64.0" layoutX="77.0" layoutY="394.0" startX="-40.0" startY="10.0" />
+            <Line fx:id="line_o" endX="30.0" layoutX="77.0" layoutY="328.0" startX="-40.0" />
+            <Line fx:id="line_p" endX="100.0" layoutX="1155.0" layoutY="420.0" startX="20.0" />
+            <Line fx:id="flecha_hc" endX="20.0" layoutX="90.0" layoutY="325.0" rotate="29.1" />
+            <Line endX="100.0" endY="14.0" layoutX="1155.0" layoutY="405.0" startX="100.0" startY="-70.0" />
+            <Line fx:id="line_r" endX="100.0" layoutX="1155.0" layoutY="334.0" startX="60.0" />
+            <Line fx:id="flecha_ic" endX="30.0" layoutX="1214.0" layoutY="327.0" rotate="-28.6" />
+            <Text layoutX="14.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="~A">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Label layoutX="1196.0" layoutY="463.0" text="~B">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_error" layoutX="556.0" layoutY="140.0" text="Entrada inválida" textFill="RED">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
+      <Line fx:id="flecha_hb" endX="20.0" layoutX="90.0" layoutY="340.0" rotate="-23.2" />
+      <Line fx:id="flecha_ib" endX="30.0" layoutX="1215.0" layoutY="349.0" rotate="-152.6" />
    </children>
 </AnchorPane>

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -15,23 +16,13 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 public class HomeController implements Initializable {
-
-    @FXML
-    private Line line_k;
-
-    @FXML
-    private Line line_l;
+    
 
     @FXML
     private TextField txtFieldBaldes;
-
-    @FXML
-    private Line flecha_ab;
-
-    @FXML
-    private Line flecha_aa;
 
     @FXML
     private Line flecha_bb;
@@ -40,25 +31,19 @@ public class HomeController implements Initializable {
     private Line flecha_ba;
 
     @FXML
-    private Line flecha_cb;
-
-    @FXML
-    private Line flecha_ca;
-
-    @FXML
     private Line flecha_db;
 
     @FXML
     private Line line_a;
 
     @FXML
-    private Button btn_start;
-
-    @FXML
-    private Line flecha_da;
-
-    @FXML
     private Line line_b;
+
+    @FXML
+    private Line flecha_ic;
+
+    @FXML
+    private Line flecha_ib;
 
     @FXML
     private Line line_i;
@@ -85,11 +70,75 @@ public class HomeController implements Initializable {
     private Line line_d;
 
     @FXML
+    private Pane line_q;
+
+    @FXML
+    private Line line_r;
+
+    @FXML
+    private Line line_o;
+
+    @FXML
+    private Line line_p;
+
+    @FXML
+    private Line line_m;
+
+    @FXML
+    private Line line_n;
+
+    @FXML
+    private Line line_k;
+
+    @FXML
+    private Line line_l;
+
+    @FXML
+    private Line flecha_ab;
+
+    @FXML
+    private Line flecha_aa;
+
+    @FXML
+    private Line flecha_cb;
+
+    @FXML
+    private Line flecha_ca;
+
+    @FXML
+    private Button btn_start;
+
+    @FXML
+    private Line flecha_da;
+
+    @FXML
+    private Line flecha_hc;
+
+    @FXML
+    private Line flecha_hb;
+
+    @FXML
     private Circle circle;
 
     @FXML
+    private Label label_error;
+
+    @FXML
     void btn_start_clicked(ActionEvent event) {
-        // ESTADO H
+
+        int buckets = 1;
+
+        String inputText = txtFieldBaldes.getText();
+        if (inputText != null && !inputText.trim().isEmpty()) {
+            try {
+                buckets = Integer.parseInt(inputText);
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada invalida");
+                label_error.setVisible(true);
+                return;
+            }
+        }
+
         TranslateTransition transition1 = new TranslateTransition();
         transition1.setDuration(Duration.seconds(0.5));
         transition1.setNode(circle);
@@ -108,7 +157,6 @@ public class HomeController implements Initializable {
         transition3.setToX(460);
         transition3.setToY(0);
 
-        // ESTADO E
         TranslateTransition transition4 = new TranslateTransition();
         transition4.setDuration(Duration.seconds(0.5));
         transition4.setNode(circle);
@@ -121,77 +169,112 @@ public class HomeController implements Initializable {
         transition5.setToX(940);
         transition5.setToY(-130);
 
-        PauseTransition p1 = new PauseTransition(Duration.seconds(2));
-
-        // ESTADO I
         TranslateTransition transition6 = new TranslateTransition();
         transition6.setDuration(Duration.seconds(0.5));
         transition6.setNode(circle);
         transition6.setToX(940);
-        transition6.setToY(0);
-        transition6.setOnFinished(e -> {
-            circle.setFill(Color.GRAY);
-        });
+        transition6.setToY(60);
 
         TranslateTransition transition7 = new TranslateTransition();
         transition7.setDuration(Duration.seconds(0.5));
         transition7.setNode(circle);
-        transition7.setToX(940);
-        transition7.setToY(130);
+        transition7.setToX(1080);
+        transition7.setToY(60);
 
         TranslateTransition transition8 = new TranslateTransition();
         transition8.setDuration(Duration.seconds(0.5));
         transition8.setNode(circle);
-        transition8.setToX(480);
-        transition8.setToY(130);
+        transition8.setToX(1080);
+        transition8.setToY(-20);
 
         TranslateTransition transition9 = new TranslateTransition();
         transition9.setDuration(Duration.seconds(0.5));
         transition9.setNode(circle);
-        transition9.setToX(460);
-        transition9.setToY(0);
+        transition9.setToX(940);
+        transition9.setToY(-20);
+        transition9.setOnFinished(e -> {
+            circle.setFill(Color.GRAY);
+        });
 
         TranslateTransition transition10 = new TranslateTransition();
         transition10.setDuration(Duration.seconds(0.5));
         transition10.setNode(circle);
-        transition10.setToX(440);
+        transition10.setToX(940);
         transition10.setToY(130);
 
         TranslateTransition transition11 = new TranslateTransition();
         transition11.setDuration(Duration.seconds(0.5));
         transition11.setNode(circle);
-        transition11.setToX(0);
+        transition11.setToX(480);
         transition11.setToY(130);
 
         TranslateTransition transition12 = new TranslateTransition();
         transition12.setDuration(Duration.seconds(0.5));
         transition12.setNode(circle);
-        transition12.setToX(0);
+        transition12.setToX(460);
         transition12.setToY(0);
-        transition12.setOnFinished(e -> {
+
+        TranslateTransition transition13 = new TranslateTransition();
+        transition13.setDuration(Duration.seconds(0.5));
+        transition13.setNode(circle);
+        transition13.setToX(440);
+        transition13.setToY(130);
+
+        TranslateTransition transition14 = new TranslateTransition();
+        transition14.setDuration(Duration.seconds(0.5));
+        transition14.setNode(circle);
+        transition14.setToX(0);
+        transition14.setToY(130);
+
+        TranslateTransition transition15 = new TranslateTransition();
+        transition15.setDuration(Duration.seconds(0.5));
+        transition15.setNode(circle);
+        transition15.setToX(0);
+        transition15.setToY(25);
+
+        TranslateTransition transition16 = new TranslateTransition();
+        transition16.setDuration(Duration.seconds(0.5));
+        transition16.setNode(circle);
+        transition16.setToX(-150);
+        transition16.setToY(25);
+
+        TranslateTransition transition17 = new TranslateTransition();
+        transition17.setDuration(Duration.seconds(0.5));
+        transition17.setNode(circle);
+        transition17.setToX(-150);
+        transition17.setToY(-40);
+
+        TranslateTransition transition18 = new TranslateTransition();
+        transition18.setDuration(Duration.seconds(0.5));
+        transition18.setNode(circle);
+        transition18.setToX(0);
+        transition18.setToY(-40);
+        transition18.setOnFinished(e -> {
             circle.setFill(Color.DARKBLUE);
         });
 
-        PauseTransition p2 = new PauseTransition(Duration.seconds(2));
-
         SequentialTransition sequentialTransition = new SequentialTransition(
                 transition1, transition2, transition3, transition4, transition5,
-                transition6, p1, transition7, transition8, transition9, transition10, transition11, transition12, p2);
+                transition6, transition7, transition8, transition9, transition10,
+                transition11, transition12, transition13, transition14, transition15,
+                transition16, transition17, transition18);
 
         SequentialTransition fullTransition = new SequentialTransition();
-        for (int i = 0; i < Integer.parseInt(txtFieldBaldes.getText()); i++) {
+        for (int i = 0; i < buckets; i++) {
             SequentialTransition newSequentialTransition = new SequentialTransition(
                     transition1, transition2, transition3, transition4, transition5,
-                    transition6, p1, transition7, transition8, transition9, transition10, transition11, transition12, p2);
+                    transition6, transition7, transition8, transition9, transition10,
+                    transition11, transition12, transition13, transition14, transition15,
+                    transition16, transition17, transition18);
             fullTransition.getChildren().add(newSequentialTransition);
         }
         fullTransition.play();
     }
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        label_error.setVisible(false);
+
         line_a.setStartX(30);
         line_a.setStartY(80);
         line_a.setEndX(30);
