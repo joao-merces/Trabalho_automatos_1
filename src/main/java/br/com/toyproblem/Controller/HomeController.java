@@ -1,7 +1,6 @@
 package br.com.toyproblem.Controller;
 
 import javafx.animation.FillTransition;
-import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -230,25 +229,25 @@ public class HomeController implements Initializable {
         transition15.setDuration(Duration.seconds(0.5));
         transition15.setNode(circle);
         transition15.setToX(0);
-        transition15.setToY(25);
+        transition15.setToY(40);
 
         TranslateTransition transition16 = new TranslateTransition();
         transition16.setDuration(Duration.seconds(0.5));
         transition16.setNode(circle);
         transition16.setToX(-150);
-        transition16.setToY(25);
+        transition16.setToY(40);
 
         TranslateTransition transition17 = new TranslateTransition();
         transition17.setDuration(Duration.seconds(0.5));
         transition17.setNode(circle);
         transition17.setToX(-150);
-        transition17.setToY(-40);
+        transition17.setToY(-20);
 
         TranslateTransition transition18 = new TranslateTransition();
         transition18.setDuration(Duration.seconds(0.5));
         transition18.setNode(circle);
         transition18.setToX(0);
-        transition18.setToY(-40);
+        transition18.setToY(-20);
 
         FillTransition colorTransitionToDarkBlue = new FillTransition(Duration.seconds(0.5), circle, Color.GRAY, Color.DARKBLUE);
 

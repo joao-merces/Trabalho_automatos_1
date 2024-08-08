@@ -79,7 +79,6 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Circle fx:id="circle" fill="#1c3c5b" layoutX="185.0" layoutY="360.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
             <TextField fx:id="txtFieldBaldes" layoutX="565.0" layoutY="57.0" />
             <Label layoutX="416.0" layoutY="20.0" text="Numero de baldes para apagar o incêndio">
                <font>
@@ -114,4 +113,5 @@
       <Line fx:id="flecha_hb" endX="20.0" layoutX="90.0" layoutY="340.0" rotate="-23.2" />
       <Line fx:id="flecha_ib" endX="30.0" layoutX="1215.0" layoutY="349.0" rotate="-152.6" />
    </children>
+      <Circle fx:id="circle" fill="#1c3c5b" layoutX="186.0" layoutY="361.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
 </AnchorPane>
