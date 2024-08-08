@@ -1,5 +1,6 @@
 package br.com.toyproblem.Controller;
 
+import javafx.animation.FillTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
@@ -192,9 +193,8 @@ public class HomeController implements Initializable {
         transition9.setNode(circle);
         transition9.setToX(940);
         transition9.setToY(-20);
-        transition9.setOnFinished(e -> {
-            circle.setFill(Color.GRAY);
-        });
+        
+        FillTransition colorTransitionToGray = new FillTransition(Duration.seconds(0.5), circle, Color.DARKBLUE, Color.GRAY);
 
         TranslateTransition transition10 = new TranslateTransition();
         transition10.setDuration(Duration.seconds(0.5));
@@ -249,27 +249,27 @@ public class HomeController implements Initializable {
         transition18.setNode(circle);
         transition18.setToX(0);
         transition18.setToY(-40);
-        transition18.setOnFinished(e -> {
-            circle.setFill(Color.DARKBLUE);
-        });
+
+        FillTransition colorTransitionToDarkBlue = new FillTransition(Duration.seconds(0.5), circle, Color.GRAY, Color.DARKBLUE);
 
         SequentialTransition sequentialTransition = new SequentialTransition(
                 transition1, transition2, transition3, transition4, transition5,
-                transition6, transition7, transition8, transition9, transition10,
+                transition6, transition7, transition8, transition9, colorTransitionToGray, transition10,
                 transition11, transition12, transition13, transition14, transition15,
-                transition16, transition17, transition18);
+                transition16, transition17, transition18, colorTransitionToDarkBlue);
 
         SequentialTransition fullTransition = new SequentialTransition();
         for (int i = 0; i < buckets; i++) {
             SequentialTransition newSequentialTransition = new SequentialTransition(
                     transition1, transition2, transition3, transition4, transition5,
-                    transition6, transition7, transition8, transition9, transition10,
+                    transition6, transition7, transition8, transition9, colorTransitionToGray, transition10,
                     transition11, transition12, transition13, transition14, transition15,
-                    transition16, transition17, transition18);
+                    transition16, transition17, transition18, colorTransitionToDarkBlue);
             fullTransition.getChildren().add(newSequentialTransition);
         }
         fullTransition.play();
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

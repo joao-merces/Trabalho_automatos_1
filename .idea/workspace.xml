@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5b2359c4-6e6b-4023-a078-9067ae45ca8f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/HomeView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/toyproblem/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/toyproblem/Controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,8 @@
       <workItem from="1723030620617" duration="57000" />
       <workItem from="1723050504367" duration="1961000" />
       <workItem from="1723053010066" duration="739000" />
-      <workItem from="1723073578087" duration="1963000" />
+      <workItem from="1723073578087" duration="2510000" />
+      <workItem from="1723080977973" duration="592000" />
     </task>
     <servers />
   </component>
